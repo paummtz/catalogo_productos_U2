@@ -1,17 +1,81 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>Formulario de producto</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <form>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-input
+          label="Nombre"
+          labelPlacement="stacked"
+          type="text"
+          placeholder="Ejemplo: Laptop Gamer Pro">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Precio"
+          labelPlacement="stacked"
+          type="number"
+          placeholder="Ejemplo: 1299.99">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select
+          label="Categoría"
+          labelPlacement="stacked"
+          placeholder="Selecciona una categoría">
+
+          <ion-select-option value="laptops">
+            Laptops
+          </ion-select-option>
+
+          <ion-select-option value="celulares">
+            Celulares
+          </ion-select-option>
+
+          <ion-select-option value="accesorios">
+            Accesorios
+          </ion-select-option>
+
+          <ion-select-option value="otros">
+            Otros
+          </ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          label="Stock"
+          labelPlacement="stacked"
+          type="number"
+          placeholder="Ejemplo: 15">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-toggle [checked]="true">
+          Producto activo
+        </ion-toggle>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button
+      type="button"
+      expand="block">
+      Guardar producto
+    </ion-button>
+
+  </form>
+
 </ion-content>
