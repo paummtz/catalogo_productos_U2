@@ -1,0 +1,164 @@
+/* Fondo general de la pantalla */
+ion-content {
+  --background: linear-gradient(
+    135deg,
+    #e7e5ff 0%,
+    #fce7f3 50%,
+    #dbeafe 100%
+  );
+}
+
+/* Encabezado */
+ion-toolbar {
+  --background: #7c6ee6;
+  --color: #ffffff;
+}
+
+ion-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Tarjeta principal del formulario */
+form {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 30px auto;
+  padding: 25px;
+
+  background: #f3f0ff;
+  border: 2px solid #c4b5fd;
+  border-radius: 22px;
+
+  box-shadow: 0 10px 25px rgba(76, 62, 148, 0.18);
+}
+
+/* Lista de campos */
+ion-list {
+  padding: 0;
+  margin-bottom: 22px;
+
+  background: transparent;
+}
+
+/* Campos del formulario */
+ion-item {
+  --background: #ffffff;
+  --color: #302b63;
+
+  --border-color: transparent;
+  --border-radius: 14px;
+
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --inner-padding-end: 0;
+
+  margin-bottom: 16px;
+
+  border: 2px solid #d8d2ff;
+  border-radius: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Efecto al seleccionar un campo */
+ion-item:focus-within {
+  border-color: #8b5cf6;
+
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.14);
+
+  transform: translateY(-1px);
+}
+
+/* Inputs y selector de categoría */
+ion-input,
+ion-select {
+  --color: #302b63;
+  --label-color: #6d5dc7;
+  --highlight-color-focused: #7c3aed;
+
+  --placeholder-color: #8c8aae;
+  --placeholder-opacity: 1;
+
+  min-height: 65px;
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Contenedor de producto activo */
+ion-item:has(ion-toggle) {
+  --background: #ffffff;
+
+  border-color: #d8d2ff;
+}
+
+/* Interruptor de producto activo */
+ion-toggle {
+  width: 100%;
+  padding: 18px 0;
+
+  color: #5b4b8a;
+  font-size: 15px;
+  font-weight: 700;
+
+  --track-background: #d8d2ff;
+  --track-background-checked: #8b5cf6;
+
+  --handle-background: #ffffff;
+  --handle-background-checked: #ffffff;
+}
+
+/* Botón para guardar */
+ion-button {
+  --background: #7c3aed;
+  --background-hover: #6d28d9;
+  --background-activated: #5b21b6;
+
+  --color: #ffffff;
+  --border-radius: 14px;
+  --box-shadow: none;
+
+  width: 100%;
+  height: 52px;
+
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: none;
+
+  letter-spacing: 0;
+
+  box-shadow: none;
+
+  transition: transform 0.2s ease;
+}
+
+ion-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Adaptación para teléfonos */
+@media (max-width: 600px) {
+  form {
+    margin: 16px auto;
+    padding: 18px;
+
+    border-radius: 18px;
+  }
+
+  ion-title {
+    font-size: 18px;
+  }
+
+  ion-item {
+    margin-bottom: 14px;
+  }
+}
+

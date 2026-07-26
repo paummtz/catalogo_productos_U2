@@ -1,1 +1,23 @@
+/* Barra donde están los tabs */
+ion-tab-bar {
+  --background: #ede9fe;
 
+  border-top: 1px solid #ddd6fe;
+
+  box-shadow: 0 -4px 12px rgba(124, 58, 237, 0.08);
+}
+
+/* Tabs que no están seleccionados */
+ion-tab-button {
+  --color: #8b7dab;
+  --color-selected: #8b5cf6;
+
+  font-weight: 500;
+}
+
+/* Icono y texto del tab seleccionado */
+ion-tab-button.tab-selected {
+  --color: #7c3aed;
+
+  font-weight: 700;
+}
