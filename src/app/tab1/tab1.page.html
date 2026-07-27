@@ -6,34 +6,40 @@
 
 <ion-content class="catalog-form-style ion-padding">
 
-  <!-- Sección de Bienvenida en Texto -->
-  <section class="welcome-text-section">
-    <h1>¡Bienvenido a nuestra tienda!</h1>
-    <h2>Descubre las mejores ofertas y novedades del día</h2>
-    
-    <p class="product-category">
-      Explora todo nuestro catálogo con envíos <strong>rápidos y seguros</strong> a todo el país.
-    </p>
+  <!-- Tarjeta de Bienvenida Principal -->
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>¡Bienvenido a nuestra tienda!</ion-card-title>
+      <ion-card-subtitle>Descubre las mejores ofertas y novedades del día</ion-card-subtitle>
+    </ion-card-header>
 
-    <!-- Etiquetas de texto simple usando tus estilos pastel -->
-    <div class="badges-wrapper">
-      <span class="custom-badge badge-active">Novedades</span>
-      <span class="custom-badge badge-success">Envío Gratis</span>
-      <span class="custom-badge badge-danger">15% OFF</span>
-    </div>
-  </section>
+    <ion-card-content>
+      <p class="product-category">
+        Explora todo nuestro catálogo con envíos <strong>rápidos y seguros</strong> a todo el país.
+      </p>
 
-  <hr class="divider" />
+      <div class="badges-wrapper">
+        <ion-badge class="custom-badge badge-active">Novedades</ion-badge>
+        <ion-badge class="custom-badge badge-success">Envío Gratis</ion-badge>
+        <ion-badge class="custom-badge badge-danger">15% OFF</ion-badge>
+      </div>
+    </ion-card-content>
+  </ion-card>
 
-  <!-- Sección de Estado / Info secundaria -->
-  <section class="info-text-section">
-    <h2>Estado del Servicio</h2>
-    <p class="loading-text">Estamos procesando los nuevos ingresos de la temporada de primavera.</p>
-    
-    <div class="badges-wrapper">
-      <span class="custom-badge badge-success">Tienda Abierta</span>
-      <span class="custom-badge badge-inactive">Soporte Offline</span>
-    </div>
-  </section>
+  <!-- Tarjeta de Estado del Servicio -->
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Estado del Servicio</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="loading-text">Estamos procesando los nuevos ingresos de la temporada de primavera.</p>
+
+      <div class="badges-wrapper">
+        <ion-badge class="custom-badge badge-success">Tienda Abierta</ion-badge>
+        <ion-badge class="custom-badge badge-inactive">Soporte Offline</ion-badge>
+      </div>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

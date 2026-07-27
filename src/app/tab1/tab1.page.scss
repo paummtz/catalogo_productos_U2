@@ -1,0 +1,130 @@
+/* Fondo general con el degradado */
+ion-content.catalog-form-style {
+  --background: linear-gradient(135deg, #e7e5ff 0%, #fce7f3 50%, #dbeafe 100%);
+}
+
+/* Encabezado */
+ion-toolbar {
+  --background: #7c6ee6;
+  --color: #ffffff;
+}
+
+ion-title {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 
+  ESTILOS PARA ION-CARD
+*/
+ion-card.custom-card {
+  --background: #f3f0ff;
+  --color: #302b63;
+  
+  border: 2px solid #c4b5fd;
+  border-radius: 22px;
+  margin: 10px;
+  
+  box-shadow: 0 10px 25px rgba(76, 62, 148, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+ion-card.custom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(76, 62, 148, 0.25);
+}
+
+/* Encabezado del ion-card */
+ion-card-header {
+  border-bottom: 2px solid #d8d2ff;
+  padding-bottom: 12px;
+}
+
+ion-card-title {
+  --color: #302b63;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+ion-card-subtitle {
+  --color: #7c3aed;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 6px;
+  text-transform: none; /* Evita mayúsculas automáticas */
+}
+
+/* Contenido */
+.product-category {
+  font-size: 14px;
+  color: #5b4b8a;
+  margin-top: 5px;
+  margin-bottom: 14px;
+}
+
+.product-category strong {
+  color: #302b63;
+}
+
+/* 
+  ESTILOS PARA ION-BADGE 
+*/
+.badges-wrapper {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+ion-badge.custom-badge {
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Colores pastel aplicados a las variables nativas del badge */
+ion-badge.badge-success {
+  --background: #d1fae5;
+  --color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+ion-badge.badge-danger {
+  --background: #ffe4e6;
+  --color: #9f1239;
+  border: 1px solid #fecdd3;
+}
+
+ion-badge.badge-active {
+  --background: #e0e7ff;
+  --color: #3730a3;
+  border: 1px solid #c7d2fe;
+}
+
+ion-badge.badge-inactive {
+  --background: #f3f4f6;
+  --color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+/* Sección del botón de acción */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px dashed #d8d2ff;
+  padding-top: 10px;
+
+  ion-button {
+    --color: #7c3aed;
+    font-weight: 700;
+    text-transform: none;
+  }
+}
+
+/* Textos de carga y estado */
+.loading-text, .empty-state p {
+  color: #302b63;
+  font-weight: 600;
+}

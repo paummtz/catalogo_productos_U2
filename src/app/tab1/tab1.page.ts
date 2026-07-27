@@ -10,12 +10,8 @@ import {
   IonCardTitle,
   IonCardSubtitle,
   IonCardContent,
-  IonBadge,
-  IonButton,
-  IonIcon
+  IonBadge
 } from '@ionic/angular/standalone';
-import { addIcons } from 'ionicons';
-import { sparklesOutline, arrowForwardOutline } from 'ionicons/icons'; // <--- Cambiado aquí
 
 @Component({
   selector: 'app-tab1',
@@ -33,13 +29,7 @@ import { sparklesOutline, arrowForwardOutline } from 'ionicons/icons'; // <--- C
     IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
-    IonBadge,
-    IonButton,
-    IonIcon
+    IonBadge
   ]
 })
-export class Tab1Page {
-  constructor() {
-    addIcons({ sparklesOutline, arrowForwardOutline }); // <--- Cambiado aquí
-  }
-}
+export class Tab1Page {}
