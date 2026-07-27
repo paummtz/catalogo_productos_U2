@@ -10,8 +10,16 @@ import {
   IonCardTitle,
   IonCardSubtitle,
   IonCardContent,
-  IonBadge
+  IonBadge,
+  IonIcon
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { 
+  headsetOutline, 
+  cellularOutline, 
+  laptopOutline, 
+  gameControllerOutline 
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-tab1',
@@ -29,7 +37,17 @@ import {
     IonCardTitle,
     IonCardSubtitle,
     IonCardContent,
-    IonBadge
+    IonBadge,
+    IonIcon
   ]
 })
-export class Tab1Page {}
+export class Tab1Page {
+  constructor() {
+    addIcons({ 
+      headsetOutline, 
+      cellularOutline, 
+      laptopOutline, 
+      gameControllerOutline 
+    });
+  }
+}

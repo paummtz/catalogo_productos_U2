@@ -1,6 +1,20 @@
-/* Fondo general con el degradado */
+/* Fondo general con el degradado pastel */
 ion-content.catalog-form-style {
   --background: linear-gradient(135deg, #e7e5ff 0%, #fce7f3 50%, #dbeafe 100%);
+
+  &::part(scroll) {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  gap: 12px;
 }
 
 /* Encabezado */
@@ -15,27 +29,59 @@ ion-title {
   text-align: center;
 }
 
-/* 
-  ESTILOS PARA ION-CARD
-*/
+/* Tarjetas Custom */
 ion-card.custom-card {
   --background: #f3f0ff;
   --color: #302b63;
   
   border: 2px solid #c4b5fd;
   border-radius: 22px;
-  margin: 10px;
+  margin: 0;
   
   box-shadow: 0 10px 25px rgba(76, 62, 148, 0.18);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 ion-card.custom-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(76, 62, 148, 0.25);
 }
 
-/* Encabezado del ion-card */
+.flex-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Grid para subcategorías de electrónica */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.category-item {
+  background: #ffffff;
+  border: 1px solid #d8d2ff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #302b63;
+  box-shadow: 0 4px 10px rgba(76, 62, 148, 0.08);
+
+  .cat-icon {
+    font-size: 26px;
+  }
+}
+
+/* Encabezado de tarjetas */
 ion-card-header {
   border-bottom: 2px solid #d8d2ff;
   padding-bottom: 12px;
@@ -49,13 +95,12 @@ ion-card-title {
 
 ion-card-subtitle {
   --color: #7c3aed;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   margin-top: 6px;
-  text-transform: none; /* Evita mayúsculas automáticas */
+  text-transform: none;
 }
 
-/* Contenido */
 .product-category {
   font-size: 14px;
   color: #5b4b8a;
@@ -67,24 +112,20 @@ ion-card-subtitle {
   color: #302b63;
 }
 
-/* 
-  ESTILOS PARA ION-BADGE 
-*/
+/* Badges */
 .badges-wrapper {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 16px;
 }
 
 ion-badge.custom-badge {
-  padding: 6px 12px;
-  border-radius: 10px;
+  padding: 8px 14px;
+  border-radius: 12px;
   font-size: 12px;
   font-weight: 700;
 }
 
-/* Colores pastel aplicados a las variables nativas del badge */
 ion-badge.badge-success {
   --background: #d1fae5;
   --color: #065f46;
@@ -109,22 +150,29 @@ ion-badge.badge-inactive {
   border: 1px solid #e5e7eb;
 }
 
-/* Sección del botón de acción */
-.card-actions {
-  display: flex;
-  justify-content: flex-end;
-  border-top: 1px dashed #d8d2ff;
-  padding-top: 10px;
-
-  ion-button {
-    --color: #7c3aed;
-    font-weight: 700;
-    text-transform: none;
-  }
-}
-
-/* Textos de carga y estado */
-.loading-text, .empty-state p {
+.loading-text {
   color: #302b63;
   font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Ajuste para los iconos dentro del grid de categorías */
+.category-item {
+  background: #ffffff;
+  border: 1px solid #d8d2ff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #302b63;
+  box-shadow: 0 4px 10px rgba(76, 62, 148, 0.08);
+
+  .cat-icon {
+    font-size: 32px;
+    color: #7c6ee6;
+  }
 }

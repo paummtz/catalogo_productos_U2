@@ -1,45 +1,74 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Inicio / Catálogo</ion-title>
+    <ion-title>Tienda de Electrónica</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="catalog-form-style ion-padding">
+  <div class="main-container">
+    
+    <!-- Tarjeta Hero de Bienvenida -->
+    <ion-card class="custom-card hero-card">
+      <ion-card-header>
+        <ion-card-title>¡Bienvenido a Tech Store!</ion-card-title>
+        <ion-card-subtitle>Lo último en tecnología y gadgets</ion-card-subtitle>
+      </ion-card-header>
 
-  <!-- Tarjeta de Bienvenida Principal -->
-  <ion-card class="custom-card">
-    <ion-card-header>
-      <ion-card-title>¡Bienvenido a nuestra tienda!</ion-card-title>
-      <ion-card-subtitle>Descubre las mejores ofertas y novedades del día</ion-card-subtitle>
-    </ion-card-header>
+      <ion-card-content>
+        <p class="product-category">
+          Encuentra los mejores dispositivos electrónicos con <strong>garantía oficial y envío rápido</strong>.
+        </p>
 
-    <ion-card-content>
-      <p class="product-category">
-        Explora todo nuestro catálogo con envíos <strong>rápidos y seguros</strong> a todo el país.
-      </p>
+        <div class="badges-wrapper">
+          <ion-badge class="custom-badge badge-active">Nuevos Modelos</ion-badge>
+          <ion-badge class="custom-badge badge-success">Envío Gratis</ion-badge>
+          <ion-badge class="custom-badge badge-danger">Descuentos Tech</ion-badge>
+        </div>
+      </ion-card-content>
+    </ion-card>
 
-      <div class="badges-wrapper">
-        <ion-badge class="custom-badge badge-active">Novedades</ion-badge>
-        <ion-badge class="custom-badge badge-success">Envío Gratis</ion-badge>
-        <ion-badge class="custom-badge badge-danger">15% OFF</ion-badge>
-      </div>
-    </ion-card-content>
-  </ion-card>
+    <!-- Subcategorías con Iconos de Ionic -->
+    <ion-card class="custom-card flex-card">
+      <ion-card-header>
+        <ion-card-title>Categorías Electrónicas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="category-grid">
+          <div class="category-item">
+            <ion-icon class="cat-icon" name="headset-outline"></ion-icon>
+            <span>Audio & Sonido</span>
+          </div>
+          <div class="category-item">
+            <ion-icon class="cat-icon" name="cellular-outline"></ion-icon>
+            <span>Celulares</span>
+          </div>
+          <div class="category-item">
+            <ion-icon class="cat-icon" name="laptop-outline"></ion-icon>
+            <span>Laptops & PC</span>
+          </div>
+          <div class="category-item">
+            <ion-icon class="cat-icon" name="game-controller-outline"></ion-icon>
+            <span>Gaming</span>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
 
-  <!-- Tarjeta de Estado del Servicio -->
-  <ion-card class="custom-card">
-    <ion-card-header>
-      <ion-card-title>Estado del Servicio</ion-card-title>
-    </ion-card-header>
+    <!-- Estado del Servicio -->
+    <ion-card class="custom-card">
+      <ion-card-header>
+        <ion-card-title>Estado del Catálogo Tech</ion-card-title>
+      </ion-card-header>
 
-    <ion-card-content>
-      <p class="loading-text">Estamos procesando los nuevos ingresos de la temporada de primavera.</p>
+      <ion-card-content>
+        <p class="loading-text">Stock actualizado con los últimos componentes y accesorios.</p>
 
-      <div class="badges-wrapper">
-        <ion-badge class="custom-badge badge-success">Tienda Abierta</ion-badge>
-        <ion-badge class="custom-badge badge-inactive">Soporte Offline</ion-badge>
-      </div>
-    </ion-card-content>
-  </ion-card>
+        <div class="badges-wrapper">
+          <ion-badge class="custom-badge badge-success">Garantía Activa</ion-badge>
+          <ion-badge class="custom-badge badge-inactive">Soporte Técnico 24/7</ion-badge>
+        </div>
+      </ion-card-content>
+    </ion-card>
 
+  </div>
 </ion-content>
