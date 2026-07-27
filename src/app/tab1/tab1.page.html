@@ -1,17 +1,59 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Mi Tienda Online</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="catalog-form-style ion-padding">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <!-- Tarjeta de Bienvenida Principal -->
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>¡Bienvenido a nuestra tienda!</ion-card-title>
+      <ion-card-subtitle>Descubre las mejores ofertas del día</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p class="product-category">
+        Explora nuestro catálogo con envíos <strong>rápidos y seguros</strong> a todo el país.
+      </p>
+
+      <!-- Badges Informativos -->
+      <div class="badges-wrapper">
+        <ion-badge class="custom-badge badge-active">
+          <ion-icon name="sparkler-outline"></ion-icon> Novedades
+        </ion-badge>
+        <ion-badge class="custom-badge badge-success">
+          Envío Gratis
+        </ion-badge>
+        <ion-badge class="custom-badge badge-danger">
+          15% OFF
+        </ion-badge>
+      </div>
+
+      <!-- Acción principal -->
+      <div class="card-actions">
+        <ion-button fill="clear" color="tertiary">
+          Ver Catálogo
+          <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Estado informativo / Novedad secundaria opcional -->
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>Estado del Servicio</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="badges-wrapper">
+        <ion-badge class="custom-badge badge-success">Tienda Abierta</ion-badge>
+        <ion-badge class="custom-badge badge-inactive">Soporte Offline</ion-badge>
+      </div>
+      <p class="loading-text">Estamos procesando los nuevos ingresos de temporada...</p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
