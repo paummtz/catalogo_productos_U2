@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Nuevo producto</ion-title>
+    <ion-title>Formulario de producto</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,7 +15,9 @@
           label="Nombre"
           labelPlacement="stacked"
           type="text"
-          placeholder="Ejemplo: Laptop Gamer Pro">
+          placeholder="Ejemplo: Laptop Gamer Pro"
+          [value]="producto().nombre"
+          (ionInput)="actualizarNombre($event)">
         </ion-input>
       </ion-item>
 
@@ -24,7 +26,10 @@
           label="Precio"
           labelPlacement="stacked"
           type="number"
-          placeholder="Ejemplo: 1299.99">
+          placeholder="Ejemplo: 1299.99"
+          min="0"
+          [value]="producto().precio"
+          (ionInput)="actualizarPrecio($event)">
         </ion-input>
       </ion-item>
 
@@ -32,21 +37,23 @@
         <ion-select
           label="Categoría"
           labelPlacement="stacked"
-          placeholder="Selecciona una categoría">
+          placeholder="Selecciona una categoría"
+          [value]="producto().categoria"
+          (ionChange)="actualizarCategoria($event)">
 
-          <ion-select-option value="laptops">
+          <ion-select-option value="Laptops">
             Laptops
           </ion-select-option>
 
-          <ion-select-option value="celulares">
+          <ion-select-option value="Celulares">
             Celulares
           </ion-select-option>
 
-          <ion-select-option value="accesorios">
+          <ion-select-option value="Accesorios">
             Accesorios
           </ion-select-option>
 
-          <ion-select-option value="otros">
+          <ion-select-option value="Otros">
             Otros
           </ion-select-option>
 
@@ -58,12 +65,17 @@
           label="Stock"
           labelPlacement="stacked"
           type="number"
-          placeholder="Ejemplo: 15">
+          placeholder="Ejemplo: 15"
+          min="0"
+          [value]="producto().stock"
+          (ionInput)="actualizarStock($event)">
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-toggle [checked]="true">
+        <ion-toggle
+          [checked]="producto().activo"
+          (ionChange)="actualizarActivo($event)">
           Producto activo
         </ion-toggle>
       </ion-item>
@@ -72,7 +84,8 @@
 
     <ion-button
       type="button"
-      expand="block">
+      expand="block"
+      (click)="guardarProducto()">
       Guardar producto
     </ion-button>
 
