@@ -1,22 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Catálogo de Productos</ion-title>
-    <!-- Botón en la parte superior derecha para agregar productos -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Catálogo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="catalog-form-style">
 
   <!-- Estado de carga -->
   @if (isLoading()) {
     <div class="ion-text-center ion-padding" style="margin-top: 50px;">
-      <ion-spinner name="crescent"></ion-spinner>
-      <p>Conectando con la base de datos...</p>
+      <ion-spinner name="crescent" color="tertiary"></ion-spinner>
+      <p class="loading-text">Conectando con la base de datos...</p>
     </div>
   } @else {
     <ion-grid>
@@ -24,36 +18,40 @@
         <!-- Iteración sobre los productos -->
         @for (product of products(); track product._id) {
           <ion-col size="12" size-md="6" size-lg="4">
-            <ion-card>
+            
+            <!-- Usamos ion-card nativo -->
+            <ion-card class="custom-card">
+              
               <ion-card-header>
                 <ion-card-title>{{ product.nombre }}</ion-card-title>
-                <ion-card-subtitle color="primary">
-                  {{ product.precio | currency:'USD' }}
-                </ion-card-subtitle>
+                <ion-card-subtitle>{{ product.precio | currency:'USD' }}</ion-card-subtitle>
               </ion-card-header>
 
               <ion-card-content>
-                <p><strong>Categoría:</strong> {{ product.categoria }}</p>
+                <p class="product-category">
+                  <strong>Categoría:</strong> {{ product.categoria }}
+                </p>
                 
-                <div class="ion-margin-top ion-margin-bottom">
-                  <!-- Validación de Stock -->
+                <!-- Envoltura para los ion-badge -->
+                <div class="badges-wrapper">
+                  <!-- Stock -->
                   @if (product.stock > 0) {
-                    <ion-badge color="success">Stock: {{ product.stock }}</ion-badge>
+                    <ion-badge class="custom-badge badge-success">Stock: {{ product.stock }}</ion-badge>
                   } @else {
-                    <ion-badge color="danger">Agotado</ion-badge>
+                    <ion-badge class="custom-badge badge-danger">Agotado</ion-badge>
                   }
 
-                  <!-- Validación de Activo/Inactivo -->
+                  <!-- Activo / Inactivo -->
                   @if (product.activo) {
-                    <ion-badge color="tertiary" class="ion-margin-start">Activo</ion-badge>
+                    <ion-badge class="custom-badge badge-active">Activo</ion-badge>
                   } @else {
-                    <ion-badge color="medium" class="ion-margin-start">Inactivo</ion-badge>
+                    <ion-badge class="custom-badge badge-inactive">Inactivo</ion-badge>
                   }
                 </div>
 
-                <!-- Solo dejamos el botón de Borrar -->
-                <div style="display: flex; gap: 10px; margin-top: 15px;">
-                  <ion-button fill="outline" size="small" color="danger" (click)="eliminarProducto(product._id)">
+                <!-- Botón de Borrar nativo -->
+                <div class="card-actions">
+                  <ion-button fill="clear" color="danger" size="small" (click)="eliminarProducto(product._id)">
                     <ion-icon slot="start" name="trash-outline"></ion-icon>
                     Borrar
                   </ion-button>
@@ -61,10 +59,11 @@
 
               </ion-card-content>
             </ion-card>
+
           </ion-col>
         } @empty {
           <!-- Mensaje cuando la base de datos está vacía -->
-          <ion-col size="12" class="ion-text-center ion-padding">
+          <ion-col size="12" class="ion-text-center ion-padding empty-state">
             <p>No hay productos registrados en el catálogo en este momento.</p>
           </ion-col>
         }
