@@ -1,4 +1,27 @@
-{
+{ 
+  "TABS": {
+    "HOME": "Home",
+    "CATALOG": "Catalog",
+    "ADD_PRODUCT": "Add Product"
+  },
+  "TAB1": {
+    "TITLE": "Electronics Store",
+    "HERO_TITLE": "Welcome to Tech Store!",
+    "HERO_SUBTITLE": "The latest in technology and gadgets",
+    "HERO_DESC": "Find the best electronic devices with <strong>official warranty and fast shipping</strong>.",
+    "BADGE_NEW": "New Models",
+    "BADGE_FREE_SHIP": "Free Shipping",
+    "BADGE_DISCOUNT": "Tech Discounts",
+    "CAT_TITLE": "Electronics Categories",
+    "CAT_AUDIO": "Accessories",
+    "CAT_PHONES": "Smartphones",
+    "CAT_LAPTOPS": "Laptops & PCs",
+    "CAT_GAMING": "Others",
+    "STATUS_TITLE": "Tech Catalog Status",
+    "STATUS_DESC": "Stock updated with the latest components and accessories.",
+    "BADGE_WARRANTY": "Active Warranty",
+    "BADGE_SUPPORT": "24/7 Tech Support"
+  },
   "TAB2": {
     "TITLE": "Product Catalog",
     "LOADING": "Connecting to the database...",

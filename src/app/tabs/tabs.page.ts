@@ -1,20 +1,29 @@
 import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-// Importamos los iconos en formato camelCase
 import { homeOutline, pricetagsOutline, addCircleOutline } from 'ionicons/icons';
+
+// 👇 Importamos el Pipe de traducción
+import { TranslatePipe } from '@ngx-translate/core'; 
 
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
   styleUrls: ['tabs.page.scss'],
-  imports: [IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel],
+  standalone: true, // <-- Asegúrate de que esto esté
+  imports: [
+    IonTabs, 
+    IonTabBar, 
+    IonTabButton, 
+    IonIcon, 
+    IonLabel, 
+    TranslatePipe // <-- Lo agregamos aquí
+  ],
 })
 export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {
-    // Registramos los iconos para poder usarlos en el HTML
     addIcons({ 
       homeOutline, 
       pricetagsOutline, 

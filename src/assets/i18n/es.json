@@ -1,4 +1,27 @@
 {
+  "TABS": {
+    "HOME": "Inicio",
+    "CATALOG": "Catálogo",
+    "ADD_PRODUCT": "Agregar Producto"
+  },
+  "TAB1": {
+    "TITLE": "Tienda de Electrónica",
+    "HERO_TITLE": "¡Bienvenido a TechStore!",
+    "HERO_SUBTITLE": "Lo último en tecnología y gadgets",
+    "HERO_DESC": "Encuentra los mejores dispositivos electrónicos con <strong>garantía oficial y envío rápido</strong>.",
+    "BADGE_NEW": "Nuevos Modelos",
+    "BADGE_FREE_SHIP": "Envío Gratis",
+    "BADGE_DISCOUNT": "Descuentos Tech",
+    "CAT_TITLE": "Categorías Electrónicas",
+    "CAT_AUDIO": "Accesorios",
+    "CAT_PHONES": "Celulares",
+    "CAT_LAPTOPS": "Laptops & PC",
+    "CAT_GAMING": "Otros",
+    "STATUS_TITLE": "Estado del Catálogo Tech",
+    "STATUS_DESC": "Stock actualizado con los últimos componentes y accesorios.",
+    "BADGE_WARRANTY": "Garantía Activa",
+    "BADGE_SUPPORT": "Soporte Técnico 24/7"
+  },
   "TAB2": {
     "TITLE": "Catálogo de Productos",
     "LOADING": "Conectando con la base de datos...",

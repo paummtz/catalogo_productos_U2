@@ -1,6 +1,15 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Tienda de Electrónica</ion-title>
+    <ion-title>{{ 'TAB1.TITLE' | translate }}</ion-title>
+    
+    <!-- Selector de idioma en la esquina derecha -->
+    <ion-buttons slot="end">
+      <ion-select interface="popover" [value]="idiomaActual" (ionChange)="cambiarIdioma($event)">
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
@@ -10,19 +19,18 @@
     <!-- Tarjeta Hero de Bienvenida -->
     <ion-card class="custom-card hero-card">
       <ion-card-header>
-        <ion-card-title>¡Bienvenido a Tech Store!</ion-card-title>
-        <ion-card-subtitle>Lo último en tecnología y gadgets</ion-card-subtitle>
+        <ion-card-title>{{ 'TAB1.HERO_TITLE' | translate }}</ion-card-title>
+        <ion-card-subtitle>{{ 'TAB1.HERO_SUBTITLE' | translate }}</ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
-        <p class="product-category">
-          Encuentra los mejores dispositivos electrónicos con <strong>garantía oficial y envío rápido</strong>.
-        </p>
+        <!-- Usamos innerHTML por si tu traducción incluye etiquetas <strong> -->
+        <p class="product-category" [innerHTML]="'TAB1.HERO_DESC' | translate"></p>
 
         <div class="badges-wrapper">
-          <ion-badge class="custom-badge badge-active">Nuevos Modelos</ion-badge>
-          <ion-badge class="custom-badge badge-success">Envío Gratis</ion-badge>
-          <ion-badge class="custom-badge badge-danger">Descuentos Tech</ion-badge>
+          <ion-badge class="custom-badge badge-active">{{ 'TAB1.BADGE_NEW' | translate }}</ion-badge>
+          <ion-badge class="custom-badge badge-success">{{ 'TAB1.BADGE_FREE_SHIP' | translate }}</ion-badge>
+          <ion-badge class="custom-badge badge-danger">{{ 'TAB1.BADGE_DISCOUNT' | translate }}</ion-badge>
         </div>
       </ion-card-content>
     </ion-card>
@@ -30,25 +38,25 @@
     <!-- Subcategorías con Iconos de Ionic -->
     <ion-card class="custom-card flex-card">
       <ion-card-header>
-        <ion-card-title>Categorías Electrónicas</ion-card-title>
+        <ion-card-title>{{ 'TAB1.CAT_TITLE' | translate }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <div class="category-grid">
           <div class="category-item">
             <ion-icon class="cat-icon" name="headset-outline"></ion-icon>
-            <span>Audio & Sonido</span>
+            <span>{{ 'TAB1.CAT_AUDIO' | translate }}</span>
           </div>
           <div class="category-item">
             <ion-icon class="cat-icon" name="cellular-outline"></ion-icon>
-            <span>Celulares</span>
+            <span>{{ 'TAB1.CAT_PHONES' | translate }}</span>
           </div>
           <div class="category-item">
             <ion-icon class="cat-icon" name="laptop-outline"></ion-icon>
-            <span>Laptops & PC</span>
+            <span>{{ 'TAB1.CAT_LAPTOPS' | translate }}</span>
           </div>
           <div class="category-item">
             <ion-icon class="cat-icon" name="game-controller-outline"></ion-icon>
-            <span>Gaming</span>
+            <span>{{ 'TAB1.CAT_GAMING' | translate }}</span>
           </div>
         </div>
       </ion-card-content>
@@ -57,15 +65,15 @@
     <!-- Estado del Servicio -->
     <ion-card class="custom-card">
       <ion-card-header>
-        <ion-card-title>Estado del Catálogo Tech</ion-card-title>
+        <ion-card-title>{{ 'TAB1.STATUS_TITLE' | translate }}</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
-        <p class="loading-text">Stock actualizado con los últimos componentes y accesorios.</p>
+        <p class="loading-text">{{ 'TAB1.STATUS_DESC' | translate }}</p>
 
         <div class="badges-wrapper">
-          <ion-badge class="custom-badge badge-success">Garantía Activa</ion-badge>
-          <ion-badge class="custom-badge badge-inactive">Soporte Técnico 24/7</ion-badge>
+          <ion-badge class="custom-badge badge-success">{{ 'TAB1.BADGE_WARRANTY' | translate }}</ion-badge>
+          <ion-badge class="custom-badge badge-inactive">{{ 'TAB1.BADGE_SUPPORT' | translate }}</ion-badge>
         </div>
       </ion-card-content>
     </ion-card>
