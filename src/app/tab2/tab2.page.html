@@ -1,6 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Catálogo de Productos</ion-title>
+    <ion-title>{{ 'TAB2.TITLE' | translate }}</ion-title>
+    <!-- Selector de idioma en la esquina derecha -->
+    <ion-buttons slot="end">
+      <!-- Cambiamos translate.currentLang por idiomaActual -->
+      <ion-select interface="popover" [value]="idiomaActual" (ionChange)="changeLanguage($event)">
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +19,7 @@
   @if (isLoading()) {
     <div class="ion-text-center ion-padding" style="margin-top: 50px;">
       <ion-spinner name="crescent" color="tertiary"></ion-spinner>
-      <p class="loading-text">Conectando con la base de datos...</p>
+      <p class="loading-text">{{ 'TAB2.LOADING' | translate }}</p>
     </div>
   } @else {
     <ion-grid>
@@ -19,41 +28,48 @@
         @for (product of products(); track product._id) {
           <ion-col size="12" size-md="6" size-lg="4">
             
-            <!-- Usamos ion-card nativo -->
             <ion-card class="custom-card">
               
               <ion-card-header>
+                <!-- Datos de BD no se traducen -->
                 <ion-card-title>{{ product.nombre }}</ion-card-title>
                 <ion-card-subtitle>{{ product.precio | currency:'USD' }}</ion-card-subtitle>
               </ion-card-header>
 
               <ion-card-content>
                 <p class="product-category">
-                  <strong>Categoría:</strong> {{ product.categoria }}
+                  <strong>{{ 'TAB2.CATEGORY_LABEL' | translate }}:</strong> {{ product.categoria }}
                 </p>
                 
-                <!-- Envoltura para los ion-badge -->
                 <div class="badges-wrapper">
                   <!-- Stock -->
                   @if (product.stock > 0) {
-                    <ion-badge class="custom-badge badge-success">Stock: {{ product.stock }}</ion-badge>
+                    <ion-badge class="custom-badge badge-success">
+                      {{ 'TAB2.STOCK_LABEL' | translate }}: {{ product.stock }}
+                    </ion-badge>
                   } @else {
-                    <ion-badge class="custom-badge badge-danger">Agotado</ion-badge>
+                    <ion-badge class="custom-badge badge-danger">
+                      {{ 'TAB2.OUT_OF_STOCK' | translate }}
+                    </ion-badge>
                   }
 
                   <!-- Activo / Inactivo -->
                   @if (product.activo) {
-                    <ion-badge class="custom-badge badge-active">Activo</ion-badge>
+                    <ion-badge class="custom-badge badge-active">
+                      {{ 'TAB2.ACTIVE' | translate }}
+                    </ion-badge>
                   } @else {
-                    <ion-badge class="custom-badge badge-inactive">Inactivo</ion-badge>
+                    <ion-badge class="custom-badge badge-inactive">
+                      {{ 'TAB2.INACTIVE' | translate }}
+                    </ion-badge>
                   }
                 </div>
 
-                <!-- Botón de Borrar nativo -->
+                <!-- Botón de Borrar -->
                 <div class="card-actions">
                   <ion-button fill="clear" color="danger" size="small" (click)="eliminarProducto(product._id)">
                     <ion-icon slot="start" name="trash-outline"></ion-icon>
-                    Borrar
+                    {{ 'TAB2.DELETE_BUTTON' | translate }}
                   </ion-button>
                 </div>
 
@@ -62,9 +78,9 @@
 
           </ion-col>
         } @empty {
-          <!-- Mensaje cuando la base de datos está vacía -->
+          <!-- Mensaje vacío -->
           <ion-col size="12" class="ion-text-center ion-padding empty-state">
-            <p>No hay productos registrados en el catálogo en este momento.</p>
+            <p>{{ 'TAB2.EMPTY_STATE' | translate }}</p>
           </ion-col>
         }
       </ion-row>

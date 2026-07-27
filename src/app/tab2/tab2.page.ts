@@ -4,11 +4,14 @@ import {
   IonHeader, IonToolbar, IonTitle, IonContent, 
   IonGrid, IonRow, IonCol, IonCard, IonCardHeader, 
   IonCardTitle, IonCardSubtitle, IonCardContent, 
-  IonButton, IonIcon, IonSpinner, IonBadge, IonButtons
+  IonButton, IonIcon, IonSpinner, IonBadge,
+  IonButtons, IonSelect, IonSelectOption 
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { trashOutline } from 'ionicons/icons';
 import { ProductService } from '../services/product.service';
+
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-tab2',
@@ -20,23 +23,28 @@ import { ProductService } from '../services/product.service';
     IonGrid, IonRow, IonCol, IonCard, IonCardHeader, 
     IonCardTitle, IonCardSubtitle, IonCardContent, 
     IonButton, IonIcon, IonSpinner, IonBadge, 
-    CurrencyPipe
+    IonButtons, IonSelect, IonSelectOption,
+    CurrencyPipe,
+    TranslatePipe 
   ]
 })
 export class Tab2Page {
   private productService = inject(ProductService);
+  public translate = inject(TranslateService);
 
-  // Mantenemos la conexión reactiva con las Signals
   public products = this.productService.products;
   public isLoading = this.productService.isLoading;
+  
+  // 1. Leemos directamente de la memoria al inicializar la clase
+  public idiomaActual: string = localStorage.getItem('idiomaApp') || 'es';
 
   constructor() {
     addIcons({ trashOutline });
   }
 
-  //  Usar el ciclo de vida nativo de Ionic
+  // 2. Refrescamos el valor visual cada vez que el usuario entra a la pestaña Tab 2
   ionViewWillEnter() {
-    // Esto conectará con tu API y actualizará la Signal justo a tiempo
+    this.idiomaActual = localStorage.getItem('idiomaApp') || 'es';
     this.productService.loadProducts();
   }
 
@@ -44,5 +52,14 @@ export class Tab2Page {
     if (id) {
       this.productService.deleteProduct(id);
     }
+  }
+
+  // 3. Función para cambiar de idioma
+  changeLanguage(event: CustomEvent) {
+    const selectedLang = event.detail.value;
+    
+    this.idiomaActual = selectedLang; // Actualizamos la vista local (el select)
+    this.translate.use(selectedLang); // Traducimos toda la app
+    localStorage.setItem('idiomaApp', selectedLang); // Guardamos en memoria
   }
 }

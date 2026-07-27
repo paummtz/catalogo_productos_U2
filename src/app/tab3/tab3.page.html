@@ -1,21 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Formulario de producto</ion-title>
+    <ion-title>{{ 'TAB3.TITLE' | translate }}</ion-title>
+
+    <!-- Selector de idioma en la esquina derecha -->
+    <ion-buttons slot="end">
+      <!-- Cambiamos translate.currentLang por idiomaActual -->
+      <ion-select interface="popover" [value]="idiomaActual" (ionChange)="cambiarIdioma($event)">
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+      </ion-select>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
 
   <form>
-
     <ion-list>
 
       <ion-item>
         <ion-input
-          label="Nombre"
+          [label]="'TAB3.LABEL_NAME' | translate"
           labelPlacement="stacked"
           type="text"
-          placeholder="Ejemplo: Laptop Gamer Pro"
+          [placeholder]="'TAB3.PLACEHOLDER_NAME' | translate"
           [value]="producto().nombre"
           (ionInput)="actualizarNombre($event)">
         </ion-input>
@@ -23,10 +32,10 @@
 
       <ion-item>
         <ion-input
-          label="Precio"
+          [label]="'TAB3.LABEL_PRICE' | translate"
           labelPlacement="stacked"
           type="number"
-          placeholder="Ejemplo: 1299.99"
+          [placeholder]="'TAB3.PLACEHOLDER_PRICE' | translate"
           min="0"
           [value]="producto().precio"
           (ionInput)="actualizarPrecio($event)">
@@ -35,26 +44,23 @@
 
       <ion-item>
         <ion-select
-          label="Categoría"
+          [label]="'TAB3.LABEL_CATEGORY' | translate"
           labelPlacement="stacked"
-          placeholder="Selecciona una categoría"
+          [placeholder]="'TAB3.PLACEHOLDER_CATEGORY' | translate"
           [value]="producto().categoria"
           (ionChange)="actualizarCategoria($event)">
 
           <ion-select-option value="Laptops">
-            Laptops
+            {{ 'TAB3.CAT_LAPTOPS' | translate }}
           </ion-select-option>
-
           <ion-select-option value="Celulares">
-            Celulares
+            {{ 'TAB3.CAT_PHONES' | translate }}
           </ion-select-option>
-
           <ion-select-option value="Accesorios">
-            Accesorios
+            {{ 'TAB3.CAT_ACCESSORIES' | translate }}
           </ion-select-option>
-
           <ion-select-option value="Otros">
-            Otros
+            {{ 'TAB3.CAT_OTHERS' | translate }}
           </ion-select-option>
 
         </ion-select>
@@ -62,10 +68,10 @@
 
       <ion-item>
         <ion-input
-          label="Stock"
+          [label]="'TAB3.LABEL_STOCK' | translate"
           labelPlacement="stacked"
           type="number"
-          placeholder="Ejemplo: 15"
+          [placeholder]="'TAB3.PLACEHOLDER_STOCK' | translate"
           min="0"
           [value]="producto().stock"
           (ionInput)="actualizarStock($event)">
@@ -76,7 +82,7 @@
         <ion-toggle
           [checked]="producto().activo"
           (ionChange)="actualizarActivo($event)">
-          Producto activo
+          {{ 'TAB3.LABEL_ACTIVE' | translate }}
         </ion-toggle>
       </ion-item>
 
@@ -86,7 +92,7 @@
       type="button"
       expand="block"
       (click)="guardarProducto()">
-      Guardar producto
+      {{ 'TAB3.BTN_SAVE' | translate }}
     </ion-button>
 
   </form>

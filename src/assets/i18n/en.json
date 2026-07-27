@@ -1,0 +1,34 @@
+{
+  "TAB2": {
+    "TITLE": "Product Catalog",
+    "LOADING": "Connecting to the database...",
+    "CATEGORY_LABEL": "Category",
+    "STOCK_LABEL": "Stock",
+    "OUT_OF_STOCK": "Out of Stock",
+    "ACTIVE": "Active",
+    "INACTIVE": "Inactive",
+    "DELETE_BUTTON": "Delete",
+    "EMPTY_STATE": "There are no products registered in the catalog at this time."
+  },
+  "TAB3": {
+    "TITLE": "Product Form",
+    "LABEL_NAME": "Name",
+    "PLACEHOLDER_NAME": "Example: Pro Gamer Laptop",
+    "LABEL_PRICE": "Price",
+    "PLACEHOLDER_PRICE": "Example: 1299.99",
+    "LABEL_CATEGORY": "Category",
+    "PLACEHOLDER_CATEGORY": "Select a category",
+    "CAT_LAPTOPS": "Laptops",
+    "CAT_PHONES": "Phones",
+    "CAT_ACCESSORIES": "Accessories",
+    "CAT_OTHERS": "Others",
+    "LABEL_STOCK": "Stock",
+    "PLACEHOLDER_STOCK": "Example: 15",
+    "LABEL_ACTIVE": "Active product",
+    "BTN_SAVE": "Save product",
+    "ERR_INCOMPLETE": "Please complete the name and category.",
+    "ERR_PRICE": "The price must be greater than zero.",
+    "ERR_STOCK": "Stock cannot be negative.",
+    "MSG_SUCCESS": "Product submitted successfully."
+  }
+}

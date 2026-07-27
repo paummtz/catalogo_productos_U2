@@ -4,6 +4,9 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 
 import { provideHttpClient } from '@angular/common/http'; //HttpClient para que funcione api
 
+import { provideTranslateService } from '@ngx-translate/core';
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'; //Traducciones
+
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
@@ -12,6 +15,12 @@ bootstrapApplication(AppComponent, {
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
-    provideHttpClient() // <-- Agregarlo a providers
+    provideHttpClient(), // <-- Agregarlo a providers
+    provideTranslateService({ //provider de traducciones
+      loader: provideTranslateHttpLoader({
+        prefix: './assets/i18n/',
+        suffix: '.json'
+      })
+    })
   ],
 });
