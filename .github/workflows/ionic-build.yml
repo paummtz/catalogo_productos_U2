@@ -1,0 +1,37 @@
+name: CI Ionic Angular con Mensaje
+
+# El flujo se activa cada vez que se suben cambios a la rama principal (main)
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Entorno donde se ejecutará el proceso
+
+    steps:
+      # Paso adicional: Mensaje inicial
+      - name: Imprimir mensaje de inicio
+        run: echo "¡Hola! Se han detectado nuevos cambios en la rama main. Iniciando la construcción del proyecto Ionic..."
+
+      # 1. Descarga del código
+      - name: Descargar el código fuente
+        uses: actions/checkout@v4
+
+      # Configuración del entorno Node.js
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 2. Instalación de dependencias
+      - name: Instalar dependencias
+        run: npm install
+
+      # 3. Construcción de la aplicación
+      - name: Construir la aplicación (Build)
+        run: npm run build
+        
+      # Paso adicional: Mensaje de éxito al finalizar
+      - name: Imprimir mensaje de éxito
+        run: echo "¡Excelente! La aplicación se ha construido correctamente y está lista."
